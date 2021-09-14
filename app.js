@@ -21,6 +21,7 @@ function baglan() {
       user: "yilsoft_kutup", 
       password: "of.616161",       
       database: "yilsoft_kutup",  
+      port: 3306
       });
 } // bağlantı END
 /*
