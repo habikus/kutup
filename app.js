@@ -29,20 +29,18 @@ app.get('/', (req, res) => {
 })
 */
 app.get("/", function(req, res){
-  res.render("home");
-  })
 
-
-  app.get('/selam', function (req, res) {
     baglan();  
     var sql = 'SELECT * FROM ogrenciler WHERE ogrencilerid < 15';   
 
     con.query(sql, function (err, results) { 
       console.log(results);
         res.render('home',{bilgim:results});   
-    });
 
-});
+
+  res.render("home");
+  })
+}) 
  
 
 app.listen(port, () => {
