@@ -66,6 +66,7 @@ app.get("/", (req, res) => {
     if (req.session.adSoySes) return res.render('index', {
         bilgiler: req.session.adSoySes
     });
+    baglan();
     res.render('giris');
 })
 
