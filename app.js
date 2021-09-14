@@ -29,7 +29,7 @@ app.use(expressLayouts);
 function baglan() {
     con = mysql.createConnection({
         
-        host: "89.163.146.147",
+        host: "89.163.146.147777",
         user: "yilsoft_kutup", 
         password: "of.616161",       
         database: "yilsoft_kutup",  
