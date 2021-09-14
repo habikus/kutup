@@ -16,15 +16,22 @@ app.set('views', './views');
 // connect to database
 function baglan() {
   con = mysql.createConnection({
-      
-      host: "89.163.146.147",
+
+      host:     ENV['89.163.146.147'],  
+      //host: "89.163.146.147",
       user: "yilsoft_kutup", 
-      password: "of.616161",       
-      database: "yilsoft_kutup",  
+    
+      password: ENV['of.616161'],    
+      //password: "of.616161",   
+
+      database: ENV['yilsoft_kutup'],  
+      //database: "yilsoft_kutup",  
       port: 3306
       });
 } // bağlantı END
 /*
+
+
 app.get('/', (req, res) => {
   res.send('Haydi Bismillah !')
 })
