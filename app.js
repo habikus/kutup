@@ -29,7 +29,7 @@ app.use(expressLayouts);
 function baglan() {
     con = mysql.createConnection({
         
-        host: "89.163.146.147777",
+        host: "89.163.146.147",
         user: "yilsoft_kutup", 
         password: "of.616161",       
         database: "yilsoft_kutup",  
@@ -63,10 +63,10 @@ function baglan() {
 global.kisi="Kullanıcı";
 
 app.get("/", (req, res) => {
+     baglan();
     if (req.session.adSoySes) return res.render('index', {
-        bilgiler: req.session.adSoySes
-    });
-    baglan();
+        bilgiler: req.session.adSoySes        
+    });   
     res.render('giris');
 })
 
