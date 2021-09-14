@@ -63,7 +63,6 @@ function baglan() {
 global.kisi="Kullanıcı";
 
 app.get("/", (req, res) => {
-     baglan();
     if (req.session.adSoySes) return res.render('index', {
         bilgiler: req.session.adSoySes        
     });   
@@ -71,8 +70,7 @@ app.get("/", (req, res) => {
 })
 
 app.get('/sefkat', function (req, res) {
-    baglan();
-  
+    baglan();  
     var sql = 'SELECT * FROM ogrenciler WHERE ogrencilerid < 20';
 
     con.query(sql, function (err, results) { 
