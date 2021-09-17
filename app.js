@@ -26,7 +26,7 @@ function baglan() {
 
       database: ENV['yilsoft_kutup'],  
       //database: "yilsoft_kutup",  
-      port: 3306
+    
       });
 } // bağlantı END
 /*
