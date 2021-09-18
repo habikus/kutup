@@ -31,7 +31,7 @@ function baglan() {
     });
 } // bağlantı END
 
-/*
+
 app.get("/", function (req, res) {
 
     baglan();
@@ -47,15 +47,15 @@ app.get("/", function (req, res) {
 })
 
 
-*/
+/*
 app.get('/', (req, res) => {
     res.send('Haydi Bismillah !')
 })
-/*
+
  app.listen(port, () => {
    console.log("Örnek uygulama dinleniyor inşallah." + port);
  })*/
 
-app.listen(app.get('port'), function () {
-    console.log('Node app is running on port', app.get('port'));
+ app.listen(app.get('port'), function() {
+    console.log('Elhamdülillah', app.get('port'));
 });
