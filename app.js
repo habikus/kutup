@@ -17,16 +17,16 @@ app.set('views', './views');
 function baglan() {
   con = mysql.createConnection({
 
-      //host:     ENV['89.163.146.147'],  
-      host: "89.163.146.147",
+      host:     ENV['89.163.146.147'],  
+     // host: "89.163.146.147",
 
       user: "yilsoft_kutup", 
     
-      //password: ENV['of.616161'],    
-      password: "of.616161",   
+     password: ENV['of.616161'],    
+      // password: "of.616161",   
 
-      //database: ENV['yilsoft_kutup'],  
-      database: "yilsoft_kutup",  
+      database: ENV['yilsoft_kutup'],  
+      //database: "yilsoft_kutup",  
     
       });
 } // bağlantı END
