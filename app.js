@@ -4,8 +4,8 @@ const app = express()
 var mysql = require('mysql');
 var path = require('path');
 
-//const port = process.env.PORT || 5500 ;
-const port = 5500 ;
+const port = process.env.PORT || 5500 ;
+//const port = 5500 ;
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('views', __dirname + '/views');
