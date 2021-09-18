@@ -4,9 +4,7 @@ const app = express()
 var mysql = require('mysql');
 var path = require('path');
 
-
 var compression = require('compression');
-
 
 app.use(compression());
 app.set('port', (process.env.PORT || 5500));
