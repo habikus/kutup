@@ -1,33 +1,38 @@
-var express = require('express');
-var app = express();
-var compression = require('compression');
+const express = require('express')
+var expressLayouts = require('express-ejs-layouts');
+const app = express()
 var mysql = require('mysql');
 var path = require('path');
+
+
+var compression = require('compression');
+
 
 app.use(compression());
 app.set('port', (process.env.PORT || 5500));
 
-app.use(express.static(path.join(__dirname, 'dist')));
-app.use('/public', express.static(path.join(__dirname, '/public')));
 
-app.set('views', __dirname + '/');
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
+app.set('views', './views');
 
 
 
 function baglan() {
     con = mysql.createConnection({
 
-        host: ENV['89.163.146.147'],
-        // host: "89.163.146.147",
+       // host: ENV['89.163.146.147'],
+         host: "89.163.146.147",
 
         user: "yilsoft_kutup",
 
-        password: ENV['of.616161'],
-        // password: "of.616161",   
+        // password: ENV['of.616161'],
+        password: "of.616161",   
 
-        database: ENV['yilsoft_kutup'],
-        //database: "yilsoft_kutup",  
+        //database: ENV['yilsoft_kutup'],
+        database: "yilsoft_kutup",  
 
     });
 } // bağlantı END
@@ -40,10 +45,7 @@ app.get("/", function (req, res) {
 
     con.query(sql, function (err, results) {
         console.log(results);
-        res.render('home', { bilgim: results });
-
-
-        res.render("home");
+        res.render('home', { bilgim: results });     
     })
 })
 
