@@ -4,8 +4,8 @@ const app = express()
 var mysql = require('mysql');
 var path = require('path');
 
-const port = process.env.PORT || 5500 ;
-
+//const port = process.env.PORT || 5500 ;
+const port = 5500 ;
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('views', __dirname + '/views');
@@ -17,15 +17,16 @@ app.set('views', './views');
 function baglan() {
   con = mysql.createConnection({
 
-      host:     ENV['89.163.146.147'],  
-      //host: "89.163.146.147",
+      //host:     ENV['89.163.146.147'],  
+      host: "89.163.146.147",
+
       user: "yilsoft_kutup", 
     
-      password: ENV['of.616161'],    
-      //password: "of.616161",   
+      //password: ENV['of.616161'],    
+      password: "of.616161",   
 
-      database: ENV['yilsoft_kutup'],  
-      //database: "yilsoft_kutup",  
+      //database: ENV['yilsoft_kutup'],  
+      database: "yilsoft_kutup",  
     
       });
 } // bağlantı END
@@ -39,7 +40,7 @@ app.get('/', (req, res) => {
 app.get("/", function(req, res){
 
     baglan();  
-    var sql = 'SELECT * FROM ogrenciler WHERE ogrencilerid < 15';   
+    var sql = 'SELECT * FROM ogrenciler WHERE ogrencilerid < 20';   
 
     con.query(sql, function (err, results) { 
       console.log(results);
