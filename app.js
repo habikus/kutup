@@ -12,50 +12,50 @@ app.use('/public', express.static(path.join(__dirname, '/public')));
 app.set('views', __dirname + '/');
 app.set('view engine', 'ejs');
 
-app.listen(app.get('port'), function() {
-    console.log('Node app is running on port', app.get('port'));
-});
 
 
 function baglan() {
     con = mysql.createConnection({
-  
-        host:     ENV['89.163.146.147'],  
-       // host: "89.163.146.147",
-  
-        user: "yilsoft_kutup", 
-      
-       password: ENV['of.616161'],    
+
+        host: ENV['89.163.146.147'],
+        // host: "89.163.146.147",
+
+        user: "yilsoft_kutup",
+
+        password: ENV['of.616161'],
         // password: "of.616161",   
-  
-        database: ENV['yilsoft_kutup'],  
+
+        database: ENV['yilsoft_kutup'],
         //database: "yilsoft_kutup",  
-      
-        });
-  } // bağlantı END
-  /*
-  
-  
-  app.get('/', (req, res) => {
-    res.send('Haydi Bismillah !')
-  })
-  */
-  app.get("/", function(req, res){
-  
-      baglan();  
-      var sql = 'SELECT * FROM ogrenciler WHERE ogrencilerid < 20';   
-  
-      con.query(sql, function (err, results) { 
+
+    });
+} // bağlantı END
+
+/*
+app.get("/", function (req, res) {
+
+    baglan();
+    var sql = 'SELECT * FROM ogrenciler WHERE ogrencilerid < 20';
+
+    con.query(sql, function (err, results) {
         console.log(results);
-          res.render('home',{bilgim:results});   
-  
-  
-    res.render("home");
+        res.render('home', { bilgim: results });
+
+
+        res.render("home");
     })
-  }) 
-   
-  
-  app.listen(port, () => {
-    console.log("Örnek uygulama dinleniyor inşallah." + port);
-  })
-   
+})
+
+
+*/
+app.get('/', (req, res) => {
+    res.send('Haydi Bismillah !')
+})
+/*
+ app.listen(port, () => {
+   console.log("Örnek uygulama dinleniyor inşallah." + port);
+ })*/
+
+app.listen(app.get('port'), function () {
+    console.log('Node app is running on port', app.get('port'));
+});
